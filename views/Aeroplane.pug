@@ -3,7 +3,7 @@ extends layout
 block content
   h1= title
   -
-  - var result = [{"travel_name":"indigo","travel_price":2500,"travel_type":"first_class"},{"travel_name":"alska","travel_price":2000,"travel_type":"second_class"},{"travel_name":"qatar","travel_price":3000,"travel_type":"business"}]
+  - var result = results
   div.container-fluid
      div.row
         each item,index in result
