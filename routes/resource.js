@@ -18,3 +18,5 @@ router.get('/Aeroplane/:id', Aeroplane_controller.Aeroplane_detail);
 // GET request for list of all Aeroplane items.
 router.get('/Aeroplane', Aeroplane_controller.Aeroplane_list);
 module.exports = router;
+// GET request for one costume. 
+router.get('/Aeroplane/:id', Aeroplane_controller.Aeroplane_detail); 
