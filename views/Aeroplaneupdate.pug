@@ -14,14 +14,14 @@ block content
     - let actionid = "/resource/Aeroplane/" + Aeroplaneid
     form(id='AeroplaneForm', action= actionid, method="PUT")
         div.form-group
-            label.AeroplaneAttr(for='travel_name') Aeroplane type
+            label.AeroplaneAttr(for='travel_name') travel name
             input#travel_name(type='text', name='travel_name', value= travel_name )
         div.form-group
-            label.AeroplaneAttr(for='travel_type') Aeroplane size
-            input#travel_type(type='number', name='travel_type', value= travel_type )
+            label.AeroplaneAttr(for='travel_type') travel type
+            input#travel_type(type='text', name='travel_type', value= travel_type )
         div.form-group
-            label.AeroplaneAttr(for='travel_price') Aeroplane name
-            input#travel_price(type='text', name='travel_price', value= travel_price )
+            label.AeroplaneAttr(for='travel_price') travel price
+            input#travel_price(type='number', name='travel_price', value= travel_price )
         input(type="submit")
     script.
         document.forms['AeroplaneForm'].addEventListener('submit', (event) => {
