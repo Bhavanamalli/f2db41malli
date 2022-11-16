@@ -1,0 +1,53 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  if (toShow == null) 
+    h2 No instance to delete 
+  else 
+    - let Aeroplaneid = toShow._id 
+    - let travel_name = toShow.travel_name 
+    - let travel_price = toShow.travel_price 
+    - let travel_type = toShow.travel_type 
+    - let actionid = "/resource/Aeroplane/" + Aeroplaneid 
+    script let actionid = "#{actionid}" 
+    div 
+      div.row 
+        div(class='AeroplaneAttr mr-3') Aeroplane ID is: 
+        div #{Aeroplaneid} 
+      div.row 
+        div(class='AeroplaneAttr mr-3') travel name is: 
+        div #{travel_name} 
+      div.row 
+        div(class='AeroplaneAttr mr-3') travel _price  is: 
+        div #{travel_price} 
+      div.row 
+        div(class='AeroplaneAttr mr-3') travel _type  is: 
+        div #{travel_type} 
+ 
+    button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete 
+    button(class="btn btn-secondary m-2" onclick="cancel()") Cancel 
+ 
+  script. 
+    function cancel() { 
+      // Go back to the home page for the Aeroplane collection 
+      window.location.href='/Aeroplanes' 
+    } 
+  script. 
+    function deleteOnid() { 
+      console.log("starting delete") 
+      // delete first 
+      fetch(actionid, { 
+        method: 'DELETE'      //Don't need a body for the delete 
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Delete succeded") 
+        window.location.href='/Aeroplane' 
+        // TODO handle body 
+      }).catch((error) => { 
+        // TODO handle error 
+        alert("Delete failed " + error ) 
+      }); 
+    }

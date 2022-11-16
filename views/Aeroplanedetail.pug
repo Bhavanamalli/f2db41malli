@@ -1,0 +1,23 @@
+extends layout
+block content
+  h1= title
+  if (toShow == null) 
+    h2 No instance to delete 
+  else    
+    - let Aeroplaneid = toShow._id
+    - let travel_name = toShow.travel_name
+    - let travel_price = toShow.travel_price
+    - let travel_type = toShow.travel_type
+    div
+    div.row
+    div(class='AeroplaneAttr mr-3') Aeroplane ID is:
+    div #{Aeroplaneid}
+    div.row
+    div(class='AeroplaneAttr mr-3') travel name  is:
+    div #{travel_name}
+    div.row
+    div(class='AeroplaneAttr mr-3') travel price is:
+    div #{travel_price}
+    div.row
+    div(class='AeroplaneAttr mr-3') travel type is:
+    div #{travel_type}
