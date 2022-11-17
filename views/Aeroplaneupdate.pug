@@ -1,6 +1,6 @@
 extends layout
 block content
-  h1= title
+  h1(class='name')= title
   if (toShow == null) 
     h2 No instance to delete 
   else      
@@ -8,18 +8,18 @@ block content
     - let travel_name = toShow.travel_name
     - let travel_price = toShow.travel_price
     - let travel_type = toShow.travel_type
-    div.row(class='mb-2')
+    div.row(class= 'design' 'mb-2')
         div.mr-1 ID is
         div #{Aeroplaneid}
     - let actionid = "/resource/Aeroplane/" + Aeroplaneid
     form(id='AeroplaneForm', action= actionid, method="PUT")
-        div.form-group
+        div(class='style').form-group
             label.AeroplaneAttr(for='travel_name') travel name
             input#travel_name(type='text', name='travel_name', value= travel_name )
-        div.form-group
+        div(class='style').form-group
             label.AeroplaneAttr(for='travel_type') travel type
             input#travel_type(type='text', name='travel_type', value= travel_type )
-        div.form-group
+        div(class='style').form-group
             label.AeroplaneAttr(for='travel_price') travel price
             input#travel_price(type='number', name='travel_price', value= travel_price )
         input(type="submit")
