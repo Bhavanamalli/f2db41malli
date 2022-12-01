@@ -1,7 +1,17 @@
 const mongoose = require("mongoose")
 const AeroplaneSchema = mongoose.Schema({
-travel_name:  String,
-travel_price: Number,
-travel_type:  String
+travel_name:  {
+    type: String, 
+    required: true
+},
+travel_price: {
+    type: Number, 
+    min:1,max:35000,
+    required: true
+},
+travel_type:  {
+    type: String, 
+    required: true
+},
 })
 module.exports = mongoose.model("Aeroplane",AeroplaneSchema)
